@@ -6,8 +6,12 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(135deg, #fff1f5, #ffe3ec, #f8d7ff);
-  color: #7a2447;
+  background: linear-gradient(135deg, #eaf6ff, #b9ddff, #d8ecff);
+  color: #123b6d;
+}
+
+a {
+  color: inherit;
 }
 
 .anniversary-page {
@@ -19,8 +23,229 @@ body {
   text-align: center;
 }
 
+.home-panel {
+  width: min(100%, 720px);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 h1 {
   margin: 0;
   font-size: clamp(2.5rem, 8vw, 6rem);
   font-weight: 700;
+}
+
+.home-menu {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.home-menu a,
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 20px;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.46);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.home-menu a:hover,
+.back-link:hover {
+  background: rgba(255, 255, 255, 0.72);
+  transform: translateY(-2px);
+}
+
+.games-page {
+  min-height: 100vh;
+  padding: 32px 24px;
+}
+
+.page-header {
+  width: min(100%, 920px);
+  margin: 0 auto 32px;
+}
+
+.page-header h1 {
+  margin-top: 28px;
+  font-size: clamp(2.25rem, 7vw, 5rem);
+}
+
+.page-header p {
+  margin: 12px 0 0;
+  font-size: 1.15rem;
+}
+
+.game-list {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  display: grid;
+  gap: 16px;
+}
+
+.game-card {
+  padding: 24px;
+  border: 2px solid rgba(18, 59, 109, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.game-card h2 {
+  margin: 0 0 8px;
+  font-size: 1.4rem;
+}
+
+.game-card p {
+  margin: 0;
+}
+
+.game-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.new-game-button {
+  min-height: 44px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: #1764bd;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.new-game-button:hover {
+  background: #0f4f99;
+  transform: translateY(-2px);
+}
+
+.game-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.game-card .score,
+.game-card .timer {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 2px solid rgba(18, 59, 109, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.48);
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.egg-board {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(58px, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.egg {
+  width: 100%;
+  aspect-ratio: 0.78;
+  padding: 0;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50% 50% 45% 45% / 58% 58% 42% 42%;
+  box-shadow: inset -10px -14px 18px rgba(0, 0, 0, 0.14),
+    inset 9px 10px 16px rgba(255, 255, 255, 0.38),
+    0 10px 20px rgba(18, 59, 109, 0.18);
+  cursor: pointer;
+  transition: box-shadow 160ms ease, transform 160ms ease, border-color 160ms ease;
+}
+
+.egg:focus-visible {
+  outline: 4px solid #102a4c;
+  outline-offset: 5px;
+}
+
+.egg:hover {
+  transform: translateY(-4px);
+}
+
+.egg.is-selected {
+  border-color: #102a4c;
+  box-shadow: inset -10px -14px 18px rgba(0, 0, 0, 0.14),
+    inset 9px 10px 16px rgba(255, 255, 255, 0.38),
+    0 0 0 5px rgba(23, 100, 189, 0.32),
+    0 14px 24px rgba(18, 59, 109, 0.28);
+  transform: translateY(-6px) scale(1.04);
+}
+
+.egg[data-color="red"] {
+  background: #f04b4b;
+}
+
+.egg[data-color="orange"] {
+  background: #f58a2f;
+}
+
+.egg[data-color="yellow"] {
+  background: #f4d64a;
+}
+
+.egg[data-color="green"] {
+  background: #43b66f;
+}
+
+.egg[data-color="blue"] {
+  background: #3f8fe5;
+}
+
+.egg[data-color="purple"] {
+  background: #8b5bd6;
+}
+
+.game-card .win-message {
+  min-height: 1.5em;
+  margin-top: 24px;
+  color: #0f6b3f;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+@media (max-width: 680px) {
+  .games-page {
+    padding: 24px 16px;
+  }
+
+  .game-card {
+    padding: 20px;
+  }
+
+  .game-card-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .new-game-button {
+    width: 100%;
+  }
+
+  .egg-board {
+    grid-template-columns: repeat(3, minmax(68px, 1fr));
+  }
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games | Happy 1st Anniversary</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="games-page">
+    <header class="page-header">
+      <a class="back-link" href="index.html">Home</a>
+      <h1>Games</h1>
+      <p>Choose a game to play together.</p>
+    </header>
+
+    <section class="game-list" aria-label="Available games">
+      <article class="game-card egg-game" aria-labelledby="egg-game-title">
+        <div class="game-card-header">
+          <div>
+            <h2 id="egg-game-title">Egg Sequence Game</h2>
+            <p>Swap eggs until your sequence matches the hidden one.</p>
+          </div>
+          <button class="new-game-button" type="button" data-new-game>New Game</button>
+        </div>
+
+        <div class="game-stats">
+          <p class="score" data-score aria-live="polite"></p>
+          <p class="timer" data-timer>Time: 0:00</p>
+        </div>
+        <div class="egg-board" data-egg-board aria-label="Player egg sequence"></div>
+        <p class="win-message" data-win-message aria-live="polite"></p>
+      </article>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
